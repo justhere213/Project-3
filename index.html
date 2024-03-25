@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <head>
+        <title>Wellness App</title>
+        <link rel="icon" href="img/meditation-logo.svg" />
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img src="img/meditation-logo.svg" alt="Logo" class="logo">
+                <h1>Wellness</h1>
+                <input type="image" src="img/settings.svg" onclick="openSettings()" class="logo"/>
+            </div>
+            <nav>
+                <ul>
+                    <li class="nav-bar-item"><a href="meditation.html" class="nav-bar-item">Meditation</a></li>
+                    <li class="nav-bar-item"><a href="audios.html" class="nav-bar-item">Audios</a></li>
+                    <li class="nav-bar-item"><a href="notes.html" class="nav-bar-item">Quotes</a></li>
+                </ul>
+                <div id="overlay">
+                    <input type="image" src="img/arrow-back-white.svg" onclick="closeSettings()" class="close-settings"/>
+                    <p class="settings">Settings</p>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <ul class="menu-list">
+                <a href="meditation.html">
+                    <li>
+                        <div class="menu-item">
+                            <figure>
+                                <img src="img/meditation-logo.svg" alt="Meditation" class="menu-icon">
+                                <figcaption>Meditation</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                </a>
+                <a href="audios.html">
+                    <li>
+                        <div class="menu-item">
+                            <figure>
+                                <img src="img/headphones-solid.svg" alt="Audios" class="menu-icon">
+                                <figcaption>Audios</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                </a>
+                <a href="notes.html">
+                    <li>
+                        <div class="menu-item">
+                            <figure>
+                                <img src="img/book-solid.svg" alt="Quotes" class="menu-icon">
+                                <figcaption>Quotes</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </main>
+        <footer>
+            <p>Contact: 10941849@uvu.edu</p>
+        </footer>
+    </body>
+</html>

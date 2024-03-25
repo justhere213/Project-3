@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <head>
+        <title>Wellness App</title>
+        <link rel="icon" href="img/meditation-logo.svg" />
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="img/arrow-back.svg" alt="back button" class="logo">
+                </a>
+                <h1>Guided Meditation</h1>
+                <input type="image" src="img/settings.svg" onclick="openSettings()" class="logo"/>
+            </div>
+            <nav>
+                <ul>
+                    <li class="nav-bar-item"><a href="meditation.html" class="nav-bar-item">Meditation</a></li>
+                    <li class="nav-bar-item"><a href="audios.html" class="nav-bar-item">Audios</a></li>
+                    <li class="nav-bar-item"><a href="notes.html" class="nav-bar-item">Quotes</a></li>
+                </ul>
+                <div id="overlay">
+                    <input type="image" src="img/arrow-back-white.svg" onclick="closeSettings()" class="close-settings"/>
+                    <p class="settings">Settings</p>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <ul class="menu-list">
+                <li><div class="menu-item"><iframe src="https://www.youtube.com/embed/Jyy0ra2WcQQ" title="Guided Meditation - Blissful Deep Relaxation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></li>
+            </ul>
+        </main>
+        <footer>
+            <p>Contact: 10941849@uvu.edu</p>
+        </footer>
+    </body>
+</html>

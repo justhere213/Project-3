@@ -1,0 +1,149 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #02530d;
+    padding: 14px;
+    color: #fff;
+    height: 20%;
+    }
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #02530d;
+    color: #fff;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    height: 40;
+    width: 40;
+}
+
+figcaption {
+    color: #fff;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+nav ul {
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style-type: none;
+    text-align: center;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.65);
+    z-index: 2;
+    text-align: center;
+    flex-direction: row;
+  }
+
+.close-settings {
+    position: relative;
+    max-width: 20px;
+    height: 100%;
+    align-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.settings {
+    font-size: 45pt;
+    width: 100%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.logo {
+    max-width: 40px;
+}
+
+.menu-icon {
+    height: 175px;
+}
+
+.nav-bar-item {
+    flex: 1;
+    width: 100px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+}
+
+.menu-item {
+    display: flex;
+    border: #02530d 1px solid;
+    background-color: rgb(0, 82, 82);
+    padding: 14px;
+    margin: 12px;
+    border-radius: 26px;
+    justify-content: center;
+    color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-basis: 1;
+    }
+
+    .logo {
+        max-width: 80px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
