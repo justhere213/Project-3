@@ -35,8 +35,6 @@ if (existingLinkNode === null) {
     var existingLinkNode = document.querySelector('link[href="css/theme.css"]');
 }
 
-console.log(themeEnabled)
-
 function toggleTheme() {
     if (!existingLinkNode) {
         existingLinkNode = document.querySelector('link[href="css/theme.css"]');
@@ -50,7 +48,6 @@ function toggleTheme() {
         // Toggle off
         if (existingLinkNode) {
             existingLinkNode.remove();
-            console.log('theme disabled')
         }
         themeEnabled = false;
     } else {
@@ -60,7 +57,6 @@ function toggleTheme() {
         linkNode.href = 'css/theme.css';
         document.head.appendChild(linkNode);
         existingLinkNode = linkNode;
-        console.log('theme enabled')
         themeEnabled = true;
     }
 
