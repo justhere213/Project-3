@@ -1,3 +1,20 @@
+/*Project:  Project 5
+Name: Kirby Balding
+Submitted: 4/25/24
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+ 
+Reflection (1-2 paragraphs):  
+ 
+*/
+
+// Open/close settings tab
+
 function openSettings() {
     document.getElementById("overlay").style.display = "flex";
 }
@@ -8,8 +25,15 @@ function closeSettings() {
 
 // Pulls theme variable
 
-let themeEnabled = JSON.parse(localStorage.getItem("theme"));
-let existingLinkNode = document.querySelector('link[href="css/theme.css"]');
+if (themeEnabled === null && JSON.parse(localStorage.getItem("theme")) === null) {
+    var themeEnabled = false;
+} else {
+    themeEnabled = JSON.parse(localStorage.getItem("theme"));
+}
+
+if (existingLinkNode === null) {
+    var existingLinkNode = document.querySelector('link[href="css/theme.css"]');
+}
 
 console.log(themeEnabled)
 
