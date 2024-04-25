@@ -1,3 +1,12 @@
+/*
+Added color gradient to nav bar and footer.
+Changed background color and font of the body.
+Swapped the options and back button.
+Added backgrounds to the nav bar buttons.
+Added borders to all main body menu items.
+Changed body layout from column to row with flex wrapping.
+*/
+
 header {
     background-color: transparent;
     background-image: linear-gradient(rgb(72, 141, 161), rgb(21, 145, 112));

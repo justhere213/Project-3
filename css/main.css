@@ -1,3 +1,8 @@
+/*
+Altered the footer so it won't float near the end of the content.
+Adjusted margins on the nav bar.
+*/
+
 header {
     display: flex;
     flex-direction: row;
