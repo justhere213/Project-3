@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ev.stopPropagation();
         } else {
             document.getElementById("visitorForm").style.display = "none";
-            document.getElementById("success").style.display = "inline-block";
+            document.getElementById("success").style.display = "block";
         }
     
         form.classList.add('was-validated');
