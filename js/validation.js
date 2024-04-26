@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         let formValid = this.checkValidity()
     
-        if (formValid) {
+        if (!formValid) {
             ev.preventDefault();
             ev.stopPropagation();
         } else {
