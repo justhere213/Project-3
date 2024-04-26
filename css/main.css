@@ -187,6 +187,27 @@ li {
     margin-bottom: 10px;
 }
 
+.flex {
+    display: flex;
+    font-size: xx-large;
+    flex-direction: column;
+    color: white;
+    align-items: flex-start;
+    margin: 25px;
+}
+
+.flex li {
+    padding: 15px;
+    width: 90%;
+}
+
+.flex li h2 {
+    background-color:rgb(22, 22, 22);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
 @media screen and (min-width: 600px) {
     header {
         flex-direction: column;

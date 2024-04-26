@@ -22,10 +22,6 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.logo-container {
-    flex-direction: row-reverse;
-}
-
 .nav-bar-item {
     background-color: cadetblue;
     border-radius: 5px;

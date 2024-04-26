@@ -6,7 +6,6 @@ const ZIP_REGEX = /\d{5}([ \-]\d{4})?/;
 const EMAIL_REGEX = /(@\w+\.\w+)$/;
 const PHONE_REGEX = /^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
     let inputs = document.querySelectorAll("input");
@@ -18,6 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let email = document.getElementById("email");
     let phone = document.getElementById("phone");
     let form = document.getElementById("visitorForm");
+    let google = document.getElementById("google");
+    let friend = document.getElementById("friend");
+    let newspaper = document.getElementById("newspaper");
+
+    $(function(){
+        $('#phone').usPhoneFormat({
+          format: '(xxx) xxx-xxxx'
+        });
+    });
 
     function validateName(el) {
         if (el.value.match(NAME_REGEX)) {
@@ -29,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function validateAddress(el) {
         if (el.value == "" | el.value === null) {
-            el.setCustomValidity('');
+            el.setCustomValidity('Please enter an address!');
         } else {
-            el.setCustomValidity('Please enter and address!');
+            el.setCustomValidity('');
         }
     }
 
@@ -75,11 +83,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function checkRequired() {
+        let checkBoxes = document.querySelectorAll('input[name="find-page"]');
+        let checked = false;
+        
+        for (let i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].checked) {
+                checked = true;
+                break;
+            }
+        }
+        
+        let lastCheckBox = checkBoxes[checkBoxes.length - 1];
+        
+        if (checked) {
+            lastCheckBox.setCustomValidity('');
+        } else {
+            lastCheckBox.setCustomValidity('At least one box needs to be checked!');
+        }
+        
+        return checked;
+    }
+
     for (let i = 0; i < inputs.length; ++i) {
         inputs[i].addEventListener("change", function (ev) {
             let el = ev.currentTarget;
             el.classList.add('was-validated');
-            console.log(`element ${el.name} was changed!`);
         });
     }
 
@@ -91,12 +120,14 @@ document.addEventListener("DOMContentLoaded", function () {
     zip.addEventListener("input", ev => {validateZip(ev.currentTarget)});
     email.addEventListener("input", ev => {validateEmail(ev.currentTarget)});
     phone.addEventListener("input", ev => {validatePhoneNumber(ev.currentTarget)});
-
+    google.addEventListener("input", ev => {checkRequired()});
+    friend.addEventListener("input", ev => {checkRequired()});
+    newspaper.addEventListener("input", ev => {checkRequired()});
 
     form.addEventListener("submit", function (ev) {
         ev.preventDefault();
         ev.stopPropagation();
-
+    
         // Custom validation
         validateName(firstName);
         validateName(lastName);
@@ -106,21 +137,19 @@ document.addEventListener("DOMContentLoaded", function () {
         validateZip(zip);
         validateEmail(email);
         validatePhoneNumber(phone);
-
-        let formValid = this.checkValidity();
-
-        if (!formValid) {
-            console.log("form not valid");
+        checkRequired();     
+    
+        let formValid = this.checkValidity()
+    
+        if (formValid) {
             ev.preventDefault();
             ev.stopPropagation();
+        } else {
+            document.getElementById("visitorForm").style.display = "none";
+            document.getElementById("success").style.display = "inline-block";
         }
-        else {
-            console.log("form is valid!!");
-            ev.preventDefault();
-            ev.stopPropagation();
-        }
+    
         form.classList.add('was-validated');
     });
-
 
     });
